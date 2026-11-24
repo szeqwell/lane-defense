@@ -1,3 +1,8 @@
 [gd_scene format=3]
 
+[ext_resource type="PackedScene" path="res://lane.tscn" id="1_lane"]
+
 [node name="Main" type="Node2D"]
+
+[node name="Lane" parent="." instance=ExtResource("1_lane")]
+position = Vector2(80, 270)
