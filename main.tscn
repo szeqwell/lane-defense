@@ -4,25 +4,25 @@
 [ext_resource type="PackedScene" uid="uid://chwieqhhttqnn" path="res://lane.tscn" id="1_lane"]
 [ext_resource type="PackedScene" uid="uid://bw5u0fkmio7xe" path="res://enemy.tscn" id="2_h2yge"]
 [ext_resource type="PackedScene" uid="uid://c2w837fl882fe" path="res://heavy_enemy.tscn" id="3_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://8avllleui0ku" path="res://projectile.tscn" id="4_lquwl"]
 [ext_resource type="PackedScene" uid="uid://c43knclvxlgii" path="res://ranged_tower.tscn" id="6_7mycd"]
 [ext_resource type="PackedScene" uid="uid://dxcubr27ykrgs" path="res://melee_tower.tscn" id="7_272bh"]
+[ext_resource type="Texture2D" uid="uid://coq4efvs0foj3" path="res://ranged_tower_icon.svg" id="8_kek77"]
+[ext_resource type="Texture2D" uid="uid://tc6a54dqxcup" path="res://melee_tower_icon.svg" id="9_4c57u"]
 
 [node name="Main" type="Node2D" unique_id=1892294160]
 script = ExtResource("1_0xm2m")
 EnemyScene = ExtResource("2_h2yge")
 HeavyEnemyScene = ExtResource("3_1bvp3")
+ProjectileScene = ExtResource("4_lquwl")
+RangedTowerScene = ExtResource("6_7mycd")
+MeleeTowerScene = ExtResource("7_272bh")
 
 [node name="Lane" parent="." unique_id=1342105626 instance=ExtResource("1_lane")]
 position = Vector2(80, 270)
 
-[node name="RangedTower" parent="Lane" instance=ExtResource("6_7mycd")]
-position = Vector2(120, 0)
-
 [node name="Lane2" parent="." unique_id=1033751621 instance=ExtResource("1_lane")]
 position = Vector2(80, 140)
-
-[node name="MeleeTower" parent="Lane2" instance=ExtResource("7_272bh")]
-position = Vector2(350, 0)
 
 [node name="Lane3" parent="." unique_id=1808175816 instance=ExtResource("1_lane")]
 position = Vector2(80, 400)
@@ -38,3 +38,17 @@ offset_top = 45.0
 offset_right = 175.0
 offset_bottom = 76.0
 text = "Start wave"
+
+[node name="TowerButtons" type="HBoxContainer" parent="." unique_id=1334733256]
+offset_left = 188.0
+offset_top = 37.0
+offset_right = 228.0
+offset_bottom = 77.0
+
+[node name="RangedTowerButton" type="TextureButton" parent="TowerButtons" unique_id=853829429]
+layout_mode = 2
+texture_normal = ExtResource("8_kek77")
+
+[node name="MeleeTowerButton" type="TextureButton" parent="TowerButtons" unique_id=586002816]
+layout_mode = 2
+texture_normal = ExtResource("9_4c57u")
