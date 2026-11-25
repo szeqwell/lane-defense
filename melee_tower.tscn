@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dxcubr27ykrgs"]
+
+[ext_resource type="Script" uid="uid://bdlyq130ig80x" path="res://MeleeTower.cs" id="1_m1gh5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bp6ky"]
+size = Vector2(122.5, 101.5)
+
+[node name="MeleeTower" type="Area2D" unique_id=1810933975]
+collision_layer = 0
+script = ExtResource("1_m1gh5")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=547075210]
+position = Vector2(-44.06767, -38.620743)
+scale = Vector2(0.57315314, 0.5687724)
+color = Color(0, 0.44705883, 0, 1)
+polygon = PackedVector2Array(-103.24, -89.56, 118.76, -89.56, 118, 89, -103, 88)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=218958086]
+position = Vector2(-40.25, -39.75)
+shape = SubResource("RectangleShape2D_bp6ky")
+
+[node name="HoldTimer" type="Timer" parent="." unique_id=397009592]
+wait_time = 2.5
+one_shot = true

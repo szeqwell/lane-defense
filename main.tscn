@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://chwieqhhttqnn" path="res://lane.tscn" id="1_lane"]
 [ext_resource type="PackedScene" uid="uid://bw5u0fkmio7xe" path="res://enemy.tscn" id="2_h2yge"]
 [ext_resource type="PackedScene" uid="uid://c2w837fl882fe" path="res://heavy_enemy.tscn" id="3_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://c43knclvxlgii" path="res://ranged_tower.tscn" id="6_7mycd"]
+[ext_resource type="PackedScene" uid="uid://dxcubr27ykrgs" path="res://melee_tower.tscn" id="7_272bh"]
 
 [node name="Main" type="Node2D" unique_id=1892294160]
 script = ExtResource("1_0xm2m")
@@ -13,8 +15,14 @@ HeavyEnemyScene = ExtResource("3_1bvp3")
 [node name="Lane" parent="." unique_id=1342105626 instance=ExtResource("1_lane")]
 position = Vector2(80, 270)
 
+[node name="RangedTower" parent="Lane" instance=ExtResource("6_7mycd")]
+position = Vector2(120, 0)
+
 [node name="Lane2" parent="." unique_id=1033751621 instance=ExtResource("1_lane")]
 position = Vector2(80, 140)
+
+[node name="MeleeTower" parent="Lane2" instance=ExtResource("7_272bh")]
+position = Vector2(350, 0)
 
 [node name="Lane3" parent="." unique_id=1808175816 instance=ExtResource("1_lane")]
 position = Vector2(80, 400)
