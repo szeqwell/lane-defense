@@ -1,8 +1,32 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://b18h4tsam066t"]
 
-[ext_resource type="PackedScene" path="res://lane.tscn" id="1_lane"]
+[ext_resource type="Script" uid="uid://bejlbew0jwem8" path="res://Main.cs" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://chwieqhhttqnn" path="res://lane.tscn" id="1_lane"]
+[ext_resource type="PackedScene" uid="uid://bw5u0fkmio7xe" path="res://enemy.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://c2w837fl882fe" path="res://heavy_enemy.tscn" id="3_1bvp3"]
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" unique_id=1892294160]
+script = ExtResource("1_0xm2m")
+EnemyScene = ExtResource("2_h2yge")
+HeavyEnemyScene = ExtResource("3_1bvp3")
 
-[node name="Lane" parent="." instance=ExtResource("1_lane")]
+[node name="Lane" parent="." unique_id=1342105626 instance=ExtResource("1_lane")]
 position = Vector2(80, 270)
+
+[node name="Lane2" parent="." unique_id=1033751621 instance=ExtResource("1_lane")]
+position = Vector2(80, 140)
+
+[node name="Lane3" parent="." unique_id=1808175816 instance=ExtResource("1_lane")]
+position = Vector2(80, 400)
+
+[node name="GameOverDialog" type="AcceptDialog" parent="." unique_id=1845071609]
+process_mode = 3
+title = "Game over"
+dialog_text = "Two barricades fell"
+
+[node name="StartWaveButton" type="Button" parent="." unique_id=1387555908]
+offset_left = 85.0
+offset_top = 45.0
+offset_right = 175.0
+offset_bottom = 76.0
+text = "Start wave"

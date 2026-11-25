@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://c2w837fl882fe"]
+
+[ext_resource type="PackedScene" uid="uid://bw5u0fkmio7xe" path="res://enemy.tscn" id="1_f5y7r"]
+
+[node name="Area2D" unique_id=1797702154 instance=ExtResource("1_f5y7r")]
+Speed = 60.0
+MaxHealth = 2
+
+[node name="Polygon2D" parent="." index="0" unique_id=2000019277]
+color = Color(0.5912029, 0.43109328, 0.8651647, 1)

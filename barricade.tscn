@@ -1,11 +1,22 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://cafdod4uabgk2"]
 
-[node name="Barricade" type="Node2D"]
+[ext_resource type="Script" uid="uid://bnx3ab6wpxnhc" path="res://Barricade.cs" id="1_barricade"]
 
-[node name="Panel" type="Polygon2D" parent="."]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_barricade"]
+size = Vector2(32, 80)
+
+[node name="Barricade" type="Area2D" unique_id=1031149757]
+collision_layer = 0
+monitorable = false
+script = ExtResource("1_barricade")
+
+[node name="Panel" type="Polygon2D" parent="." unique_id=136366858]
 color = Color(0.72, 0.49, 0.24, 1)
 polygon = PackedVector2Array(-16, -40, 16, -40, 16, 40, -16, 40)
 
-[node name="Brace" type="Polygon2D" parent="."]
-color = Color(0.91, 0.70, 0.40, 1)
+[node name="Brace" type="Polygon2D" parent="." unique_id=53630130]
+color = Color(0.91, 0.7, 0.4, 1)
 polygon = PackedVector2Array(-16, -20, 16, 8, 16, 20, -16, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1522697202]
+shape = SubResource("RectangleShape2D_barricade")
